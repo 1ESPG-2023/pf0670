@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
 <body>
-
+  
     <header class="cabecalho">
         <span>CABEÇALHO</span>
     </header>
@@ -28,7 +28,9 @@
 
     <foooter class="rodape">
         <span>RODAPÉ</span>
-        <button value="10" onclick="console.log(`Resultado ${soma(this.value,10,5)}`)">CLICK</button>       
+        <!-- <button value="10" onclick="console.log(`Resultado ${soma(this.value,10,5)}`)">CLICK</button> -->
+        <button onclick="mudaCor()">START</button>
+        <button onclick="clearTimeout(tmp)">STOP</button>
     </foooter>
 
 </body>
