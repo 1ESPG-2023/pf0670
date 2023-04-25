@@ -96,4 +96,3 @@ tmp = setTimeout(mudacor, 1000)
 
 }
 
-mudacor();
