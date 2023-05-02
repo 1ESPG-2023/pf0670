@@ -6,13 +6,13 @@
     height: 20vh;
     background-color: blue;
     color: #fff;
-}
+} 
 
 .container{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    height: 60vh;
+    height: auto;
     background-color: blueviolet;
 }
 
