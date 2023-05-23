@@ -10,9 +10,23 @@ const usuario2 = {
     senhaUsuario:"12345"
 }
 
-let listaDeUsuarios = [];
-listaDeUsuarios.push(usuario1);
-listaDeUsuarios.push(usuario2);
+//lista de usuarios
+let listaDeUsuarios = [{
+    nomeCompleto: "pedro silva",
+    nomeUsario: "99987",
+    senhaUser: "123456",
+    avatar: "#"
+}, {
+    nomeCompleto: "pedro silva",
+    nomeUsario: "99987",
+    senhaUser: "123456",
+    avatar: "#"
+}, {
+    nomeCompleto: "pedro silva",
+    nomeUsario: "99987",
+    senhaUser: "123456",
+    avatar: "#"
+}];
 
 localStorage.setItem("listaUser",  JSON.stringify(listaDeUsuarios));
 
