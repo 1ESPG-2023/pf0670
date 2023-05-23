@@ -1,21 +1,33 @@
 
-//GERANDO DOIS OBJETOS NO LOCALSTORAGE
-const usuario1 = {
-    nomeUsuario:"predo",
-    senhaUsuario:"12345"
-}
-
-const usuario2 = {
-    nomeUsuario:"anzina",
-    senhaUsuario:"12345"
-}
-
-let listaDeUsuarios = [];
-listaDeUsuarios.push(usuario1);
-listaDeUsuarios.push(usuario2);
+//GERANDO UMA LISTA DE USUÁRIOS
+let listaDeUsuarios = [
+    {
+        nomeCompleto : "Pedro Silva",
+        nomeUsuario : "101010",
+        senhaUsuario: "123456",
+        avatarUsuario:"url"
+    },
+    {
+        nomeCompleto : "Ana Paula",
+        nomeUsuario : "101010",
+        senhaUsuario: "123456",
+        avatarUsuario:"url"
+    },
+    {
+        nomeCompleto : "Henrique Rico",
+        nomeUsuario : "101010",
+        senhaUsuario: "123456",
+        avatarUsuario:"url"
+    },
+    {
+        nomeCompleto : "Guilherme Hora",
+        nomeUsuario : "101010",
+        senhaUsuario: "123456",
+        avatarUsuario:"url"
+    }
+];
 
 localStorage.setItem("listaUser",  JSON.stringify(listaDeUsuarios));
-
 
 //VAMOS CRIAR UM OBJETO PARA ARMAZENAR O NOSSO USUÁRIO
 // const usuario = {
@@ -34,7 +46,7 @@ addEventListener("click",(evento)=>{
         // let senha = document.querySelector("#idPass").value;
        
         // RECUPERANDO DOS IMPUTS
-        let inputUserValue = document.querySelector("#idUser").value;
+        let inputRMValue = document.querySelector("#idRm").value;
         let inputPassValue = document.querySelector("#idPass").value;
         
         const h1Titulo = document.querySelector("#titulo");
@@ -49,7 +61,7 @@ addEventListener("click",(evento)=>{
         try{
             lista.forEach((usuario)=> {
                 //VALIDAÇÃO
-                if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
+                if(inputRMValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
                     userValidado = usuario;
                     throw "VALIDADO";
                 }
@@ -72,14 +84,20 @@ addEventListener("click",(evento)=>{
 
                 //Atualizando o token no LocalStorage
                 localStorage.setItem("user-token",  JSON.stringify(token));
-
-                //Direcionando o usuário para a página de sucesso!
-                window.location.href = "../sucesso.html";
+                
+                setTimeout(()=>{
+                    //Direcionando o usuário para a página de sucesso!
+                    window.location.href = "../sucesso.html";
+                }, 3000);
 
             }else{
                 h1Titulo.innerHTML = "<span><strong>Login ou senha inválidos!</strong></span>";
                 h1Titulo.setAttribute("style","color:#ff0000;");
-                window.location.href = "../erro.html";
+                setTimeout(()=>{
+                    //Direcionando o usuário para a página de erro!
+                    window.location.href = "../erro.html";
+                }, 3000);
+                
             }
         }       
     }
